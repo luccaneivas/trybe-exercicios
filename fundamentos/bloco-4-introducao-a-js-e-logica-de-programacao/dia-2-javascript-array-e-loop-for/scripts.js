@@ -72,13 +72,13 @@ let menor;
 // console.log(menor);
 
 //EXERCICIO 8
-let array = []
-for (let i = 1; i <= 25; i += 1) {
-  array.push(i);
-}
+// let array = []
+// for (let i = 1; i <= 25; i += 1) {
+//   array.push(i);
+// }
 //console.log(array);
 
 //EXERCICIO 9
-for (const num of array) {
-  console.log(num/2);
-}
+// for (const num of array) {
+//   console.log(num/2);
+// }
