@@ -82,3 +82,40 @@ let menor;
 // for (const num of array) {
 //   console.log(num/2);
 // }
+
+//BONUS - 1
+// console.log(numbers);
+// for (let i = 1; i < numbers.length; i += 1){
+//   for (let u = 0; u < numbers.length; u += 1){
+//     if (numbers[i] < numbers[u]){
+//       let valuei = numbers[i];
+//       numbers[i] = numbers[u];
+//       numbers[u] = valuei;
+//     }
+//   }
+// }
+// console.log(numbers);
+
+//BONUS - 2
+// console.log(numbers);
+// for (let i = 1; i < numbers.length; i += 1){
+//   for (let u = 0; u < numbers.length; u += 1){
+//     if (numbers[i] > numbers[u]){
+//       let valuei = numbers[i];
+//       numbers[i] = numbers[u];
+//       numbers[u] = valuei;
+//     }
+//   }
+// }
+// console.log(numbers);
+
+//BONUS - 3
+// let array = [];
+// for (let i = 0; i < numbers.length; i += 1){
+//   if (i == numbers.length-1){
+//     array.push(numbers[i]*2)
+//   } else{
+//     array.push(numbers[i] * numbers[i+1]);
+//   }
+// }
+// console.log(array);
