@@ -1,4 +1,4 @@
-let n = 5;
+let n = 7;
 
 //EXERCICIO 1
 // if (n > 1){
@@ -48,4 +48,25 @@ let n = 5;
 //     }
 //     console.log(string);
 //   }
+// }
+
+//BONUS 5
+if (n%2 == 1){
+  
+}
+
+//BONUS 6
+// let prime = true;
+// for (let i = 1; i <= n; i += 1){
+//   if (i != 1 && i != n){
+//     if (n%i == 0){
+//       prime = false;
+//       console.log('Divisível por ' + i + '.');
+//     }
+//   }
+// }
+// if (prime == true){
+//   console.log('Sim, o número ' + n + ' é primo.');
+// } else {
+//   console.log('Não, o número ' + n + ' não é primo.');
 // }
