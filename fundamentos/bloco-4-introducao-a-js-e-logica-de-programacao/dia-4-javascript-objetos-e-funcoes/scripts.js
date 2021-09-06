@@ -37,3 +37,103 @@
 // }
 
 //PARTE 2 FUNÇÕES - 4.4
+//EXERCICIO 1
+// console.log(verificaPalindrome('arara'));
+// function verificaPalindrome (string) {
+//   let array = string.split('');
+//   let arrayTeste = (string.split('')).reverse();
+//   for (let i = 0; i < array.length; i += 1) {
+//     if (array[i] != arrayTeste[i]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+//EXERCICIO 2
+// console.log(maior([2, 3, 6, 7, 10, 1]));
+// function maior(array) {
+//   let maior = array[0];
+//   for (const number of array) {
+//     if (number >= maior){
+//       maior = number;
+//     }
+//   }
+//   let index = array.indexOf(maior);
+//   return index;
+// }
+
+//EXERCICIO 3
+// console.log(menor([2, 4, 6, 7, 10, 0, -3]));
+// function menor(array) {
+//   let menor = array[0];
+//   for (const number of array) {
+//     if (number <= menor) {
+//       menor = number;
+//     }
+//   }
+//   let index = array.indexOf(menor);
+//   return index;
+// }
+
+//EXERCICIO 4
+// console.log(maiorNome(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana', 'Esquedosplato']));
+// function maiorNome(array) {
+//   let nome = array[0];
+//   let tamanho = array[0].length;
+//   for (const name of array) {
+//     if (name.length >= tamanho) {
+//       tamanho = name.length;
+//       nome = name;
+//     }
+//   }
+//   return nome;
+// }
+
+//EXERCICIO 5
+// console.log(repeated([2, 3, 3, 3, 2, 5, 8, 2, 3]));
+// function repeated(array) {
+//   let numero;
+//   let maiorRepeticao = 0;
+//   for (const number of array) {
+//     let contador = 0;
+//     for (let i = 0; i < array.length; i += 1) {
+//       if (number === array[i]) {
+//         contador += 1;
+//       }
+//     }
+//     if (contador >= maiorRepeticao) {
+//       maiorRepeticao = contador;
+//       numero = number;
+//     }
+//   }
+//   return numero;
+// }
+
+//EXERCICIO 6
+// console.log(soma(25));
+// function soma(n) {
+//   let soma = 0;
+//   for (let i = 1; i <= n; i += 1) {
+//     soma += i;
+//   }
+//   return soma;
+// }
+
+//EXERCICIO 7
+console.log(finalWord('joaofernando', 'fernan'));
+function finalWord(word, ending) {
+  let palavra = word.split('');
+  let final = ending.split('');
+  let contador = 0;
+  let teste = false;
+  for (let i = (palavra.length - final.length); i < palavra.length; i += 1){
+    if (palavra[i] == final[contador]) {
+      teste = true;
+    } else {
+      teste = false;
+    }
+    contador += 1;
+  }
+  return teste;
+}
