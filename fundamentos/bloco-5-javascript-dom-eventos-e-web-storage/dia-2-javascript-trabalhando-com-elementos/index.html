@@ -57,7 +57,56 @@
   </head>
   <body>
     <script>
-      // COLOQUE SEU CÓDIGO AQUI
+      const body = document.querySelector('body');
+
+      let title = document.createElement('h1');
+      title.innerText = 'Exercício 5.2 - JavaScript DOM';
+      body.appendChild(title);
+
+      let main = document.createElement('main');
+      main.className = 'main-content';
+      body.appendChild(main);
+
+      let centerSection = document.createElement('section');
+      centerSection.className = 'center-content';
+      main.appendChild(centerSection);
+
+      let paragraph = document.createElement('p');
+      paragraph.innerText = 'Alterar o documento com JS é muito legal :D';
+      centerSection.appendChild(paragraph);
+
+      let leftSection = document.createElement('section');
+      leftSection.className = 'left-content';
+      main.appendChild(leftSection);
+
+      let rightSection = document.createElement('section');
+      rightSection.className = 'right-content';
+      main.appendChild(rightSection);
+
+      let image = document.createElement('img');
+      image.className = 'small-image';
+      image.src = 'https://picsum.photos/200';
+      leftSection.appendChild(image);
+
+      let unorderedList = document.createElement('ul');
+      function popList(array){
+        for(let i = 0; i < array.length; i += 1){
+          let li = document.createElement('li');
+          li.innerText = array[i];
+          unorderedList.appendChild(li);
+        }
+      }
+      popList(['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez']);
+      rightSection.appendChild(unorderedList);
+
+      function criaSubtitles(quantidade){
+        for(i = 0; i < quantidade; i += 1){
+          let subtitle = document.createElement('h3');
+          subtitle.innerText = 'Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.';
+          main.appendChild(subtitle);
+        }
+      }
+      criaSubtitles(3);
     </script>
   </body>
 </html>
