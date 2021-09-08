@@ -1,27 +1,62 @@
-.caixa {
-    color: white;
-    display: inline-block;
-    line-height: 50px;
-    text-align: center;
-    vertical-align: top;
-  }
-  
-  .width-and-height {
-    height: 50px;
-    width: 50px;
-  }
-  
-  /* insira na classe abaixo um padding de 20px para aplicá-lo aos itens B, C e D */
-  .padding {
-    padding: 20px;
-  }
-  
-  /* insira na classe abaixo uma margem de 30px para aplicá-la aos itens C e D */
-  .margin {
-    margin: 30px;
-  }
-  
-  /* insira na classe abaixo uma borda com valor '5px solid black' para aplicá-la ao item D */
-  .border {
-    border: 5px solid black;
-  }
+.lordened {
+  background-color: yellow;
+}
+
+li.lordened:nth-last-of-type(2n+2){
+  color: green;
+}
+
+li.lordened:nth-last-of-type(2n+1){
+  text-transform: uppercase;
+}
+
+.header {
+  color: red;
+}
+
+.header em{
+  font-size: 40px;
+  border: solid 1px black;
+}
+
+li {
+  font-size: 20px;
+}
+
+li em {
+  font-weight: bold;
+}
+
+.ulinguagens li:nth-child(-n+3) {
+  color: blue;
+}
+
+.ulinguagens #java {
+  background-color: pink;
+}
+
+#stkoverflow a:hover {
+  text-decoration-style: orange;
+  font-weight: bold;
+  color: orange;
+}
+#w3schools a:hover {
+  text-decoration-style: green;
+  font-weight: bold;
+  color: green;
+}
+#mdn a:hover {
+  text-decoration-style: black;
+  font-weight: bold;
+  color: black;
+}
+#devdocs a:hover {
+  text-decoration-style: yellow;
+  font-weight: bold;
+  color: yellow;
+}
+#trybe a:hover {
+  text-decoration-style: rgb(3, 37, 3);
+  font-weight: bold;
+  color: rgb(3, 37, 3);
+}
