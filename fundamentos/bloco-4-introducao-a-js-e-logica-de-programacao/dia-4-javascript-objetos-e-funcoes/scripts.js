@@ -121,19 +121,63 @@
 // }
 
 //EXERCICIO 7
-console.log(finalWord('joaofernando', 'fernan'));
-function finalWord(word, ending) {
-  let palavra = word.split('');
-  let final = ending.split('');
-  let contador = 0;
-  let teste = false;
-  for (let i = (palavra.length - final.length); i < palavra.length; i += 1){
-    if (palavra[i] == final[contador]) {
-      teste = true;
-    } else {
-      teste = false;
-    }
-    contador += 1;
+// console.log(finalWord('joaofernando', 'fernan'));
+// function finalWord(word, ending) {
+//   let palavra = word.split('');
+//   let final = ending.split('');
+//   let contador = 0;
+//   let teste = false;
+//   for (let i = (palavra.length - final.length); i < palavra.length; i += 1){
+//     if (palavra[i] == final[contador]) {
+//       teste = true;
+//     } else {
+//       teste = false;
+//     }
+//     contador += 1;
+//   }
+//   return teste;
+// }
+
+//BÔNUS
+// EXERCICIO 1
+console.log(conversorRomano('XI'));
+function conversorRomano(string) {
+  const algarismosRomanos = {
+    'I': 1,
+    'IV': 4,
+    'V': 5,
+    'IX': 9,
+    'X': 10,
+    'XL': 40,
+    'L': 50,
+    'XC': 90,
+    'C': 100,
+    'CD': 400,
+    'D': 500,
+    'CM': 900,
+    'M': 1000,
   }
-  return teste;
+  let numeros = [];
+  let stringTeste = '';
+  for (let i = 0; i < string.length; i += 1){
+    stringTeste += string[i];
+    if (algarismosRomanos.hasOwnProperty(stringTeste)){
+      numeros.push(stringTeste);
+      stringTeste = '';
+    }
+  }
+  let convertido = [];
+  let somatoria = 0;
+  for (const number of numeros) {
+
+    convertido.push(algarismosRomanos[number]);
+  }
+  for (let i = 0; i < convertido.length; i += 1) {
+    if (convertido[i + 1] < convertido[i]) {
+
+    } else {
+      somatoria += convertido[i];
+    }
+  }
+  return somatoria;
 }
