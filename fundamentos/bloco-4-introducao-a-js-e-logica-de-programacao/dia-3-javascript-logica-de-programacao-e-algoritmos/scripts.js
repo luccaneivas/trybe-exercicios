@@ -51,9 +51,24 @@ let n = 7;
 // }
 
 //BONUS 5
-if (n%2 == 1){
-  
-}
+// if (n % 2 != 0) {
+//   let start = Math.round(n/2);
+//   let aux1 = start;
+//   let aux2 = start;
+//   for (let i = 0; i < start; i += 1) {
+//     let string = '';
+//     for (let j = 1; j <= aux2; j += 1){
+//       if (j === aux1 || j === aux2 || i === start - 1){
+//         string += '*';
+//       } else {
+//         string += ' ';
+//       }
+//     }
+//     aux1 -= 1;
+//     aux2 += 1;
+//     console.log(string);
+//   }
+// }
 
 //BONUS 6
 // let prime = true;
