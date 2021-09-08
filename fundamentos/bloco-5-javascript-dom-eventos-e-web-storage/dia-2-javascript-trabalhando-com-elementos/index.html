@@ -57,6 +57,7 @@
   </head>
   <body>
     <script>
+      // PARTE 1 --------------------------------
       const body = document.querySelector('body');
 
       let title = document.createElement('h1');
@@ -107,6 +108,17 @@
         }
       }
       criaSubtitles(3);
+      // PARTE 2 -------------------------------------
+      title.className = 'title';
+      let subtitles = document.querySelectorAll('h3');
+      for (const subtitle of subtitles) {
+        subtitle.className = 'description';
+      }
+      main.removeChild(leftSection);
+      rightSection.style.marginRight = 'auto';
+      centerSection.style.backgroundColor = 'green';
+      unorderedList.removeChild(document.querySelectorAll('li')[9]);
+      unorderedList.removeChild(document.querySelectorAll('li')[8]);
     </script>
   </body>
 </html>
