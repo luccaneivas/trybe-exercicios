@@ -47,13 +47,13 @@ createFeriadoButton('Feriados');
 function alteraFeriados() {
   const feriadoButton = document.getElementById('btn-holiday');
   feriadoButton.addEventListener('click', function () {
-  let holidays = document.getElementsByClassName('holiday');
-  for (const holiday of holidays) {
-    if (holiday.style.backgroundColor === 'yellow'){
-      holiday.style.backgroundColor = 'rgb(238,238,238)';
-    } else {
-      holiday.style.backgroundColor = 'yellow';
-    }
+    let holidays = document.getElementsByClassName('holiday');
+    for (const holiday of holidays) {
+      if (holiday.style.backgroundColor === 'yellow'){
+        holiday.style.backgroundColor = 'rgb(238,238,238)';
+      } else {
+        holiday.style.backgroundColor = 'yellow';
+      }
   }
   });
 }
@@ -89,19 +89,105 @@ function alteraSextas() {
 
 alteraSextas();
 
+function newTaskSpan(task) {
+
+  let tasksContainer = document.querySelector('.my-tasks');
+  let taskName = document.createElement('span');
+
+  taskName.innerHTML = task;
+  tasksContainer.appendChild(taskName);
+};
+
+newTaskSpan('Projeto:');
+
+function adicionaLegenda(string) {
+  let div = document.querySelector('.my-tasks');
+  let legenda = document.createElement('div');
+  legenda.classList.add('task');
+  legenda.style.backgroundColor = string;
+  div.appendChild(legenda);
+}
+adicionaLegenda('orange');
+
 function zoom() {
   let days = document.getElementsByClassName('day');
+  let taskDiv = document.querySelector('.task');
+  let taskColor = taskDiv.style.backgroundColor;
   for (const day of days) {
     day.addEventListener('mouseenter', function (event) {
       day.style.fontSize = '30px';
-      day.style.color = 'red';
+      if (day.style.color !== taskColor) {
+        day.style.color = 'red';
+      }
     });
     day.addEventListener('mouseleave', function (event) {
       day.style.fontSize = '20px';
-      day.style.color = '#777';
+      if (day.style.color !== taskColor) {
+        day.style.color = '#777';
+      }
     });
   }
 }
 
 zoom();
 
+function selectedTask() {
+  let selectedTasks = document.getElementsByClassName('task selected');
+  let task = document.querySelector('.task');
+
+  task.addEventListener('click', function(event) {
+    if (selectedTasks.length === 0) {
+      event.target.className = 'task selected';
+    } else {
+      event.target.className = 'task';
+      console.log(selectedTasks.length);
+    }
+  });
+}
+selectedTask();
+
+function alteraCorDia() {
+  let selectedTask = document.getElementsByClassName('task selected');
+  let days = document.querySelector('#days');
+  let taskDiv = document.querySelector('.task');
+  let taskColor = taskDiv.style.backgroundColor;
+  
+  days.addEventListener('click', function(event){
+    let eventTargetColor = event.target.style.color;
+    if (selectedTask.length > 0 && eventTargetColor !== taskColor) {
+      let color = selectedTask[0].style.backgroundColor;
+      event.target.style.color = color;
+    } else if (eventTargetColor === taskColor && selectedTask.length !== 0) {
+      event.target.style.color = 'rgb(119,119,119)';
+    }
+  });
+}
+alteraCorDia();
+
+function novoCompromisso() {
+  let input = document.querySelector('#task-input');
+  let btnAdd = document.querySelector('#btn-add');
+  let taskList = document.querySelector('.task-list');
+  let error = '[ERRO] Compromisso inválido! Digite algo.';
+
+  btnAdd.addEventListener('click', function() {
+    if (input.value.length > 0) {
+      let novoCompromisso = document.createElement('li');
+      novoCompromisso.innerText = input.value;
+      taskList.appendChild(novoCompromisso);
+      input.value = '';
+    } else {
+      alert(error);
+    }
+  });
+
+  input.addEventListener('keyup', function(event) {
+    if (event.keyCode === 13 && input.value.length > 0) {
+      let novoCompromisso = document.createElement('li');
+      novoCompromisso.innerText = input.value;
+      taskList.appendChild(novoCompromisso);
+      input.value = '';
+    }
+  });
+};
+novoCompromisso();
