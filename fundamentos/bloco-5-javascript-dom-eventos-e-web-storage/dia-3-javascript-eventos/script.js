@@ -23,7 +23,8 @@ function popDaysOfTheWeek() {
     day.innerText = dezDaysList[i];
     if (i === 25 || i === 26 || i === 32) {
       day.classList.add('holiday');
-    } else if (i === 4 || i === 11 || i === 18 || i === 25) {
+    }
+    if (i === 5 || i === 12 || i === 19 || i === 26) {
       day.classList.add('friday');
     }
     daysList.appendChild(day);
@@ -43,7 +44,7 @@ function createFeriadoButton(string) {
 
 createFeriadoButton('Feriados');
 
-function alteraFeriados(){
+function alteraFeriados() {
   const feriadoButton = document.getElementById('btn-holiday');
   feriadoButton.addEventListener('click', function () {
   let holidays = document.getElementsByClassName('holiday');
@@ -54,8 +55,53 @@ function alteraFeriados(){
       holiday.style.backgroundColor = 'yellow';
     }
   }
-});
+  });
 }
 
 alteraFeriados();
+
+function createSextaButton(string) {
+  const div = document.querySelector('.buttons-container');
+  let feriadoButton = document.createElement('button');
+  feriadoButton.id = 'btn-friday';
+  feriadoButton.innerText = string;
+
+  div.appendChild(feriadoButton);
+}
+
+createSextaButton('Sexta-feira');
+
+let data = [];
+function alteraSextas() {
+  const fridayButton = document.getElementById('btn-friday');
+  fridayButton.addEventListener('click', function () {
+  let fridays = document.getElementsByClassName('friday');
+  for (let i = 0; i < fridays.length; i++){
+    if (fridays[i].innerText === 'SEXTOU O/'){
+      fridays[i].innerText = data[i];
+    } else {
+      data.push(fridays[i].innerText);
+      fridays[i].innerText = 'SEXTOU O/';
+    }
+  }
+  });
+}
+
+alteraSextas();
+
+function zoom() {
+  let days = document.getElementsByClassName('day');
+  for (const day of days) {
+    day.addEventListener('mouseenter', function (event) {
+      day.style.fontSize = '30px';
+      day.style.color = 'red';
+    });
+    day.addEventListener('mouseleave', function (event) {
+      day.style.fontSize = '20px';
+      day.style.color = '#777';
+    });
+  }
+}
+
+zoom();
 
