@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Form de Currículo</title>
+</head>
+<body>
+  <main>
+    <form action="#" method="get">
+      <div>
+        <fieldset>
+          <legend>Informações Pessoais</legend>
+          <div>
+            <label for="nome-completo">Nome: <input type="text" name="nome-completo" id="nome-completo" placeholder="digite seu nome completo" maxlength="40" required></label>
+          </div>
+          <div>
+            <label for="email">e-mail: <input type="email" name="email" id="email" placeholder="digite seu e-mail" maxlength="50" required></label>
+          </div>
+          <div>
+            <label for="cpf">CPF: <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" maxlength="11" required></label>
+          </div>
+          <div>
+            <label for="endereco">Endereço: <input type="text" name="endereco" id="endereco" placeholder="seu endereço" maxlength="200" required></label>
+          </div>
+          <div>
+            <label for="cidade">Cidade: <input type="text" name="cidade" id="cidade" placeholder="sua cidade" maxlength="28" required></label>
+          </div>
+          <div>
+            <label for="estado">Estado:</label>
+            <select name="estado" id="estado" required></select>
+          </div>
+          <div>
+            <label for="residencia">Tipo de residência:</label>
+            <input type="radio" name="residencia" id="residencia_casa" value="casa" required><label for="casa" aria-required>Casa</label>
+            <input type="radio" name="residencia" id="residencia_apto" value="apartamento"><label for="apartamento">Apartamento</label>
+          </div>
+        </fieldset>
+      </div>
+      <div>
+        <fieldset>
+          <legend>Último Emprego</legend>
+          <div>
+            <label for="resume">Seu currículo:<textarea name="resume" id="resume" cols="70" rows="5" maxlength="1000" required></textarea></label>
+          </div>
+          <div>
+            <label for="cargo">Cargo: <input type="text" name="cargo" id="cargo" placeholder="digite seu cargo" maxlength="500" required></label>
+          </div>
+          <div>
+            <label for="data_inicio">Data de ingressão: <input type="date" name="data_inicio" id="data_inicio" min="01-01-0000" max="31-12-2100" required></label>
+          </div>
+        </fieldset>
+      </div>
+      <button id="buttonSubmit" type="submit" >ENVIAR</button>
+    </form>
+  </main>
+
+  <script src="./script.js">
+  </script>
+</body>
+</html>
