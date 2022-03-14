@@ -1,0 +1,17 @@
+{
+  "name": "dia-2-nodejs-fluxo-assincrono",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ex1": "node ex1.js",
+    "ex2": "node ex2.js",
+    "ex3": "node ex3.js",
+    "ex4": "node ex4.js",
+    "ex5": "node ex5.js",
+    "ex6": "node ex6.js"
+  },
+  "keywords": [],
+  "author": "Lucca Neiva",
+  "license": "ISC"
+}
